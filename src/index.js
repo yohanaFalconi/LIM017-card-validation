@@ -7,19 +7,43 @@ inputCardNumber.addEventListener('keypress', function(event){
 })
 
 let message = document.getElementById("message");
+let validationMessage = document.getElementById("validationMessage");
+
 let button1 = document.getElementById("buttonValidation");
-button1.addEventListener("click", playButton);
+button1.addEventListener("click", playButton); 
 
 function playButton(){
   //capturar el input y almacenarlo
-  var inputCardNumber = document.getElementById("inputCardNumber");
-  inputCardNumber = inputCardNumber.value; 
-  console.log(inputCardNumber);
+  var cardNumber = document.getElementById("inputCardNumber");
+  cardNumber = cardNumber.value; 
+  console.log(cardNumber);
+  let arrayCard=Array.from(cardNumber).reverse();
+ //aplicación de la operación
+ for ( let i = 0; i< arrayCard.length; i++){
+   if( i%2 != 0) {
+     arrayCard[i] = arrayCard[i]*2;
+     if(arrayCard[i] >= 10){
+       arrayCard[i] = arrayCard[i]-9;
+      }
+    }
+  }
 
-
-
-
+  let sum = 0;
+  for ( let i = 0; i< arrayCard.length; i++){
+    sum += parseInt(arrayCard[i]);
+  }
+  if(sum % 10 == 0){
+    return true;
+    } else{
+    return false;
+  }
 }
+// return masked string
+
+
+
+
+
   /*
   // envíen un msm de número incompleto ¿cuándo solo ingresa <9?
   // envía un msm si ingresa e, signo o un campo vacío al final
