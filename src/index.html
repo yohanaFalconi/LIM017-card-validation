@@ -4,29 +4,164 @@
     <meta charset="utf-8">
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Dancing+Script&family=Open+Sans+Condensed:wght@300&family=Poppins:wght@100;200;300;400;600&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    
   </head> 
+
   <body>
-    <header> 
-      <h1>Validación de tarjeta de crédito</h1>
-    </header>
 
-    <main>
-      <section>
-        <h3>Nombre y apellido</h3>
-        <input type="text" id="nameUser" required >
-        <button id="buttonUserName" >registrar</button>
-      </section>
-
-      <section>
-        <h3>Número de tarjeta</h3>
-        <input type="number" id="inputCardNumber" pattern="\d+" min="9" required>
-        <button id="buttonValidation" >validar</button>
-        <p id="message"></p>
-      </section>
-      <div>
-        <p id="validationMessage"></p>
+    <section id="firstScreen">
+      <div class="container">
+        <nav>
+          <label class="title">A-A</label>
+          <ul>
+            <li><a href="#">Home</a></li> 
+            <li><a href="#">Nosotros</a></li> 
+            <li><a href="#">Servicios</a></li> 
+            <li><a href="#">Contactos</a></li> 
+            <li><a href="#">Feedback</a></li> 
+          </ul>
+        </nav>
+        <div class="mainText">
+          <h1>Billetera Universitaria</h1>
+          <p> </p>
+        </div>
+        <button id="buttonShiftSecondScreen">Ingresar</button>
       </div>
-    </main>
+    </section>
+    
+
+    <form action="" method = "post" id="form">
+      <h1>Iniciar sesión</h1>
+      <div class="containerRegis">
+        <div class="userRegistration">
+          <label for="userNameReg">Nombre:</label><br>
+          <input type="text" id="userName"><br>
+        </div>
+        <div class="userRegistration">
+          <label for="userEmailReg">Email:</label><br>
+          <input type="email" id="userEmail"><br>
+        </div>
+        <div class="userRegistration">
+          <label for="userPasswordReg"> Contraseña:</label><br>
+          <input type="password" id="userPassword"><button type="button" id="showPassword">Mostrar Contraseña</button>      
+        </div>
+      </div>
+      <div class="form-buttons">
+        <button id="back"><a style="color:black;" href="index.html">Regresar</a></button>
+        <button id="buttonSignIn" >Entrar</button>
+      </div>
+      <p class="warnings" id="warningMessage"></p>
+    </form>
+
+    <section id="studentProfileScreen">
+      <nav class="studentProfileNav">
+        <ul class="studentProfileUl">
+          <li class="liStudent"><a href="index.html" class="button" id="backHome">Home</a></li>
+          <li class="liStudent"><a href="#">Mi perfil </a></li> 
+          <li class="liStudent"><a href="#">Mis beneficios</a></li> 
+          <li class="liStudent"><a href="#">Ayuda</a></li> 
+        </ul>
+      </nav>
+      <h1 id="welcome">Bienvenido, </h1>
+      <img src="images/studentPicture.jpg" class="studentPicture">
+      <div>
+        <div class="box1">
+          <div class= "boxHeader">
+            <h1 class="account">Cuenta</h1>
+          </div><br>
+          <p>S/ 10. 00</p>
+          <button id="buttonAddFunds">Ingresar Fondos</button>
+        </div>
+        <div class="box2"> 
+          <div class= "boxHeader">
+            <h1>Transacciones</h1>
+          </div><br>
+          <p>Bliblioteca | copias      S/0.80 </p><br>
+          <p>  Cafetería   | consumo     S/4.20 </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="cardInformationScreen">
+      <div class="cardImage">
+        <div class="Brand" id="Brand">
+         <!-- <img src="images/visa.png" alt="">-->
+        </div>
+        <img src="images/chipCard.png" class="chipImage" alt="">
+        <div class="cardData">
+          <div class="cardDataGroup" id="cardImageNumberId">
+            <p class="label">Número Tarjeta</p>
+            <p class="cardImageNumber">#### #### #### ####</p> 
+          </div>
+          <div class="flexbox">
+            <div class="cardDataGroup" id="cardImageNameId">
+              <p class="label">Nombre Tarjeta</p>
+              <p class="cardImageName"></p>
+            </div>
+            <div class="cardDataGroup" id="cardExpirationId">
+              <p class="label">Expiración</p>
+              <p class="cardExpiration"><span class="monthExpiration">MM</span> | <span class="yearExpiration" >AA</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--información-->
+      <div class="">
+        <div class="CardInformation" id="CardInformation">
+          <div class="cardGroupInformation">
+            <label for="inputNumberLabel">Número de tarjeta</label>
+            <input type="text" id="inputCardNumber" maxlength="16" autocomplete="off">
+            <p id="message"></p>
+          
+          </div>
+          <div class="cardGroupInformation">
+            <label for="inputNameLabel">Nombre</label>
+            <input type="text" id="nameInput" autocomplete="off">
+          </div>
+          <div class="flexbox">
+            <div class="expirationGroup">
+              <label for="selectMonth">Expiración</label>
+              <div class="flexbox">
+  
+                <div class="selectGroup">
+                  <select name="month" id="selectMonth">
+                    <option disabled selected>Mes</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="selectGroup">
+                  <select name="year" id="selectYear">
+                    <option disabled selected>Año</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </div>
+            </div>
+  
+            <div class="ccvGroup">
+              <label for="inputCCV">CCV</label>
+              <input type="text" id="inputCCV" maxlength="3">
+            </div>
+
+          </div>
+          <button id="buttonValidation">VALIDAR</button>
+        </div>
+      </div>
+    </section>
+
+
+    <div  id="cardValidationScreen">
+      <p id="validationMessage"></p>
+      <p id="maskNumber"></p>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="index.js" type="module"></script>
   </body>
 </html>

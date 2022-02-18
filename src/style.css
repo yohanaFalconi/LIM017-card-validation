@@ -1,0 +1,418 @@
+
+*{
+    font-family: montserrat;
+    padding: 0;
+    margin: 0;
+    text-decoration: none; /*eliminando los subrayados*/
+    list-style: none; /*eliminandao el estilo de la lista*/
+    box-sizing: border-box; /*border para ajustar al tamaño de un elemento*/
+    font-family: 'Poppins', sans-serif;
+}
+body{ 
+    min-height: 80vh; /*Altura de la ventana gráfica (vh)*/
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(../images/backgroundMainPage.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+/*******FIRST SCREEN**************/
+.container{
+    display: block;
+}
+
+nav{
+    background-color: transparent;
+    height:50px ; /*altura del nav*/
+    width:  100% ; /*ancho del background*/     
+}
+
+label.title{
+    color: white;
+    font-size: 30px;/*tamaño de la fuente*/
+    line-height: 60px; /*altura del título*/
+    padding-left: 40px; /*enviando a la derecha*/
+    font-weight: bold;/*grosor de la letra, bold es normal*/
+}
+nav ul{
+    float: right; /* ubica un elemento al lado derecho */
+    margin-right: 40px; /* empuja de la der a la iz el txto*/
+}
+nav ul li{
+    display: inline-block; /*no agrega un salto de línea después del elemento*/
+    line-height: 60px;
+
+    /* Arriba | Derecha | Abajo | Izquierda */
+    margin: 8px 12px; /*el margen para los cuatro lados*/
+    font-size: 13px;
+    text-transform: uppercase;
+    justify-content: space-between;
+}
+nav ul li a{
+    color: white;
+}
+h1 #mainText{
+
+}
+
+/*******FIRST SCREEN**************/
+/*section #firstScreen{
+}*/
+
+/*Barra lateral, side bar*/
+#form{
+    position: fixed; /*posicion fija*/ 
+    top: 0px; /**/
+    height: 100%; /*altura de toda la pg*/
+    width: 100%; /*ancho*/
+    background-color: rgba(224, 221, 221, 0.808);
+
+    font-family: 'Roboto Condensed';
+    display: none;
+}
+#form{
+    padding: 90px 50px 80px 450px;
+
+}
+form h1 {
+    font-size: 30px;
+    margin-top: -50px;
+    margin-bottom: 0px;
+    margin-left: 60px;
+    color: black;
+}
+.containerRegis{
+    margin-top: 45px;
+    display: grid;
+    gap: 1.5em; /*espaciado*/
+}
+.userRegistration{
+    position: relative;
+
+}
+form input{
+    width: 250px;
+    background: none;
+    color: #706c6c;
+    font-size: 16px; /*tamaño*/
+    padding: 0.6em 0.3em;
+    border:none;
+    outline: none; /*contorno*/
+    --color: #2c2b2b7e;
+    border-bottom: 1px solid var(--color);
+}
+form label {
+    font-size: 13px;
+    color: #1615157e;
+    cursor: pointer;
+    position: absolute;
+    top:0px; 
+    left: 5px;
+}
+#showPassword{
+    margin-left: 14px;
+    margin-top: -150px;
+    font-size: 12px;
+}
+form div button{
+    margin-top: 20px;
+    margin-left: 10px;
+    gap: 1.5em; 
+    background: rgb(156, 155, 155);
+    width: 150px;
+    
+}
+#back{
+    margin-top: 40px;
+    margin-left: -20px;
+    color: black;
+
+}
+.warnings{
+    color: black;
+    display: block;
+}
+
+/*STUDENT PROFILE SCREEN*/
+#studentProfileScreen{
+    width: 100%; 
+    background-color: #0a0a0a;
+    position: fixed; /*posicion fija*/ 
+    top: 0px; /**/
+    height: 100%; /*altura de toda la pg*/
+    width: 100%; 
+    display: none;
+    
+}
+
+#welcome{
+    color: white;
+    margin-top: 30px;
+    margin-left: 60px;
+}
+.studentPicture{
+    width: 150px; /*ancho*/
+    float: right;
+    margin-top: -30px ;
+    margin-right: 80px;
+
+    border-radius: 50%; /*borde con radio*/
+
+    background: solid;
+    border:1px solid rgb(238, 238, 238);
+}
+.studentProfileNav{
+    /*background-color: rgb(114, 53, 53);*/
+    background-color: #2f3131 ;
+    height:50px ; /*altura del nav*/
+    width: 100% ; /*ancho del background*/ 
+    color: #04202c
+} 
+.studentProfileUl{
+    float: left;
+    margin-left: 330px;
+}
+.liStudent a {
+    margin-left: 10px; 
+    margin-right: 50px;
+    display: inline-block; /*no agrega un salto de línea después del elemento*/
+    font-size: 13px;/*tamaño de la fuente*/
+    line-height: 60px; /*altura del título*/
+    font-weight: 50px;/*grosor de la letra, bold es normal*/
+}
+
+.box1{
+    background: rgb(196, 189, 189);
+    width: 280px; /*ancho*/
+    height: 200px;
+    border: 2px solid rgb(87, 81, 81); 
+
+    float: left; /*poner una caja al lado de otra a la iz*/
+    margin-top: 90px;  
+    margin-left: 50px;
+
+    border-radius: 1%; /*borde con radio*/
+
+
+}
+.box2{
+    background: rgb(196, 189, 189);
+    width: 370px; /*ancho*/
+    height: 200px;
+    border: 10px solid solid transparent;
+    border: 2px solid rgb(87, 81, 81); 
+
+    float: left;
+    margin-top: 90px;  
+    margin-left: 50px;
+
+    border-radius: 1%; /*borde con radio*/
+}
+.boxHeader{
+    font-size: 13px;
+    height: 30px;
+    background-color: #523634;    
+}
+#buttonAddFunds{
+    margin-left: -2px;
+    margin-top: 170px;
+    width: 280px;
+    height: 30px;
+    font-size: 13px;
+}
+
+
+/*CARD INFORMATION SCREEN*/
+#cardInformationScreen{
+    display: block;
+    background-color:  #fff;
+}
+/**********estilos de la card************/
+.cardImage{
+    align-items: left; /*está centrando de forma horizontal*/
+    background: #fff;
+    width: 440px; 
+    height: 260px;
+    margin-top: 150px;  
+    margin-left: 130px;
+
+    flex-direction: column; /*los elementos tenga formato de colum*/
+
+    padding: 40px 20px;
+    border-radius: 5%;
+    display: flex; /*acomodar los elemtos*/
+    justify-content: space-between;/*espaciado de cada elemento*/
+    box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+    background: url(../images/Captura.png);
+    background-color: rgb(39, 38, 38);
+    background-size: cover; 
+
+    filter:brightness(1);
+    filter:alpha(opacity=50);
+    filter: opacity(1);
+
+    float: left;
+    cursor: pointer;
+}
+.cardImage .Brand{
+    text-align: right;
+    min-height: 60px;
+    margin-top: -15px;
+}
+.cardImage .Brand img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*recortar*/
+    max-width: 80px;
+}
+.cardImage .chipImage{
+    width: 100%;
+    max-width: 50px;
+    margin-bottom: 20px;
+}
+.cardImage .cardDataGroup .label{
+    font-size: 15px;
+    color: #d3d5da;
+    margin-bottom: 10px;
+}
+.cardImage .cardDataGroup .cardImageNumber,
+.cardImage .cardDataGroup .cardImageName,
+.cardImage .cardDataGroup .cardExpiration{
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase; /*mayusculas*/
+}
+.cardImage .flexbox{
+    display:flex; /*elemntos uno al lado del otros */
+    justify-content: space-between;/*separar los elemnto*/
+    margin-top: 5px;
+}
+
+
+/**********formato de la información*************/
+
+.CardInformation{
+    display: block;
+    background-color: rgba(77, 77, 82, 0.233);
+    height: 330px;
+    width: 400px;
+
+    float: right;
+    margin-top: 110px;
+    margin-right: 200px;;
+    padding: 30px;
+}
+.CardInformation label{
+    display: block; /*para q ocupe todo el espacio */
+    color: #7d8994;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.CardInformation input,
+.CardInformation select{
+    border: 2px solid #ced6e0;
+    font-size: 14px;
+    height: 30px;
+    width: 100%;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+
+/*efecto para q el usuario sepa que puede insertar #..*/
+/*cambia el color del input*/
+.CardInformation input:hover,
+.CardInformation select:hover{
+    border: 2px solid #afa6af;
+}
+/*sombra y contorno del input*/
+.CardInformation input:focus,
+.CardInformation select:focus{
+    outline: rgb(88, 82, 82); /*contorno*/
+	box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);   
+}
+/*espaciado entre los inputs y mayusculas*/
+.CardInformation input{
+    margin-bottom: 20px;
+	text-transform: uppercase;
+}
+.CardInformation #message{
+    margin-top: -15px;
+    margin-left: -0px;
+    color: rgb(224, 31, 31);
+    font-size: 14px;
+    margin-bottom:15px;
+}
+
+/*ordenando los exp y cvv*/
+.CardInformation .flexbox{
+    display:flex;
+    justify-content: space-between;
+}
+.CardInformation .expirationGroup{
+    width: 100%;
+}
+.CardInformation .ccvGroup{
+    width: 100px;
+}
+/*adecuando a los expi y agregué el ícono*/
+.CardInformation .selectGroup{
+    width: 110px;
+    margin-right: 15px;
+    position: relative; /**para acomodar el icono de manera absoluta/
+    /*necesario ponerlo relativo*/
+}
+.CardInformation select{
+    -webkit-appearance: none; /*quitando la apariencia normal del > abajo*/
+}
+.CardInformation .selectGroup i{
+    position: absolute;
+    color: #CED6E0;
+    top: 10px;
+    right: 20px;
+}
+.CardInformation .selectGroup:hover{
+    color: #afa6af; /*color del ícono*/
+}
+
+/*boton validar*/
+.CardInformation #buttonValidation {
+	border: none;
+	font-size: 20px;
+	color: #fff;
+	background: #3c4d6b;
+	box-shadow: 2px 2px 10px 0px rgba(24, 25, 27, 0.4);
+	cursor: pointer;
+    margin-top: 15px;
+
+    
+}
+.CardInformation #buttonValidation:hover {
+	background: #6408f71a;
+}
+#buttonValidation{
+    border: 2px solid #ced6e0;
+    height: 30px;
+    width: 100%;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+/* VALIDATION MESSAGE SCREEN*/
+#cardValidationScreen{
+    display: none;
+}
+#cardInformationScreen{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
