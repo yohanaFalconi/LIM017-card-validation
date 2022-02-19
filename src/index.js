@@ -4,12 +4,23 @@ import validator from './validator.js';
 /*          <img src="images/logo_2.png" class="navBrand">
 */
 
+// aparezca la pantalla de form- segunda pantalla
+let firstScreen = document.getElementById("firstScreen");
+let buttonShiftForm = document.getElementById('buttonShiftSecondScreen');
+buttonShiftForm.addEventListener('click', formAppear);
+function formAppear(){
+  firstScreen.style.display = 'none';
+  form.style.display ='block'
+}
+
 // formulario de registros 
 const userName = document.getElementById("userName");
 const userEmail = document.getElementById("userEmail");
 const userPassword = document.getElementById("userPassword");
 const form = document.getElementById("form");
 const warningMessageParagraph = document.getElementById("warningMessage");
+
+
 
 form.addEventListener("submit", e=>{ // function (e){}
   e.preventDefault(); //para q no se envie por default
@@ -41,17 +52,18 @@ form.addEventListener("submit", e=>{ // function (e){}
       form.style.display ='none'
       secondScreen.style.display = 'block';
     } 
-  }/* else{ 
+  } else{ 
     //lleve a la tercera pantalla
+    let thirdScreen = document.getElementById("studentProfileScreen")
     let buttonShift_= document.getElementById('buttonSignIn');
-    buttonShift_.addEventListener('click', secondScreenAppear);
-    let secondScreen = document.getElementById("secondScreen")
-    function secondScreenAppear(){
+    buttonShift_.addEventListener('click', thirdScreenAppear);
+
+    function thirdScreenAppear(){
       form.style.display ='none'
-      secondScreen.style.display = 'block';
+      thirdScreen.style.display = 'block';
     } 
-  }*/
-} )
+  }
+})
 
 // showing the password
 let displayPassword = document.getElementById('showPassword');
@@ -64,23 +76,15 @@ function showPassword_(){
   }
 }
 
-// aparezca la pantalla de form
-let buttonShiftForm = document.getElementById('buttonShiftSecondScreen');
-buttonShiftForm.addEventListener('click', formAppear);
-let firstScreen = document.getElementById("firstScreen")
-function formAppear(){
-  firstScreen.style.display = 'none';
-  form.style.display ='block'
-}
+
 
 //aparezca student Information Screen
-
 let buttonShift_= document.getElementById('buttonSignIn');
-buttonShift_.addEventListener('click', secondScreenAppear);
-let secondScreen = document.getElementById("secondScreen")
-function secondScreenAppear(){
+buttonShift_.addEventListener('click', thirdScreenAppear);
+let studentProfileScreen = document.getElementById("studentProfileScreen")
+function thirdScreenAppear(){
   form.style.display ='none'
-  secondScreen.style.display = 'block';
+  studentProfileScreen.style.display = 'block';
 }
 
 // STUDENT PROFILE SCREEN
@@ -92,7 +96,6 @@ welcomeMessage.innerHTML = `Bienvenidx,` /*+ user.value*/
 
 
 // * CARD INFORMATION SCREEN 
-let CardInformation =document.querySelector("#CardInformation") //class
 let selectMonth = document.querySelector("#selectMonth")
 
 // Tarjeta dinámica
