@@ -1,28 +1,27 @@
 import validator from './validator.js';
-//console.log(validator);
 
-/*          <img src="images/logo_2.png" class="navBrand">
-*/
+//pantallas
+let firstScreen = document.getElementById("firstScreen");
+let userForm = document.getElementById("userForm");
+let studentProfileScreen = document.getElementById("studentProfileScreen");
+let cardInformationScreen= document.getElementById("cardInformationScreen");
+let cardValidationScreen= document.getElementById("cardValidationScreen");
+
 
 // aparezca la pantalla de form- segunda pantalla
-let firstScreen = document.getElementById("firstScreen");
 let buttonShiftForm = document.getElementById('buttonShiftSecondScreen');
 buttonShiftForm.addEventListener('click', formAppear);
 function formAppear(){
   firstScreen.style.display = 'none';
-  form.style.display ='block'
+  userForm.style.display ='block'
 }
-
-// formulario de registros 
+// formulario de inicio de sesión 
 const userName = document.getElementById("userName");
 const userEmail = document.getElementById("userEmail");
 const userPassword = document.getElementById("userPassword");
-const form = document.getElementById("form");
 const warningMessageParagraph = document.getElementById("warningMessage");
-
-
-
-form.addEventListener("submit", e=>{ // function (e){}
+const buttonSignIn = document.getElementById("buttonSignIn");
+buttonSignIn.addEventListener("click", e=>{ // function (e){}
   e.preventDefault(); //para q no se envie por default
   let regexEmail = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/; //expresiones regurales
   let warningMessage = ""
@@ -38,33 +37,20 @@ form.addEventListener("submit", e=>{ // function (e){}
     warningMessage += `El email no es válido <br>`;
     successfulSignIn = false;
   }
-  if(userPassword.value.length <6){
-    warningMessage += `La contraseña no es válida <br>`;
+  if(userPassword.value.length<6){
+    warningMessage += `La contraseña no <br>`;
     successfulSignIn = false;
   }
   if(successfulSignIn==false){
     warningMessageParagraph.innerHTML = warningMessage;
-    //eliminar despues
-    let buttonShift_= document.getElementById('buttonSignIn');
-    buttonShift_.addEventListener('click', secondScreenAppear);
-    let secondScreen = document.getElementById("secondScreenAppear")
-    function secondScreenAppear(){
-      form.style.display ='none'
-      secondScreen.style.display = 'block';
-    } 
   } else{ 
-    //lleve a la tercera pantalla
-    let thirdScreen = document.getElementById("studentProfileScreen")
-    let buttonShift_= document.getElementById('buttonSignIn');
-    buttonShift_.addEventListener('click', thirdScreenAppear);
-
-    function thirdScreenAppear(){
-      form.style.display ='none'
-      thirdScreen.style.display = 'block';
-    } 
+    // aparezca la pantalla de studentProfileScreen - tercera pantalla
+    userForm.style.display ='none';
+    studentProfileScreen.style.display = 'block';
+    const welcomeMessage = document.getElementById("welcome"); 
+    welcomeMessage.innerHTML = `Bienvenidx, `+ userName.value;
   }
 })
-
 // showing the password
 let displayPassword = document.getElementById('showPassword');
 displayPassword.addEventListener('click', showPassword_);
@@ -76,26 +62,13 @@ function showPassword_(){
   }
 }
 
-
-
-//aparezca student Information Screen
-let buttonShift_= document.getElementById('buttonSignIn');
-buttonShift_.addEventListener('click', thirdScreenAppear);
-let studentProfileScreen = document.getElementById("studentProfileScreen")
-function thirdScreenAppear(){
-  form.style.display ='none'
-  studentProfileScreen.style.display = 'block';
+//aparezca card Information Screen
+let buttonShiftCardInformation= document.getElementById('buttonAddFunds');
+buttonShiftCardInformation.addEventListener('click', fourthScreenAppear);
+function fourthScreenAppear(){
+  studentProfileScreen.style.display = 'none';
+  cardInformationScreen.style.display ='block';
 }
-
-// STUDENT PROFILE SCREEN
-const welcomeMessage = document.getElementById("welcome"); 
-welcomeMessage.innerHTML = `Bienvenidx,` /*+ user.value*/
-
-
-
-
-
-// * CARD INFORMATION SCREEN 
 let selectMonth = document.querySelector("#selectMonth")
 
 // Tarjeta dinámica
@@ -117,22 +90,16 @@ for(let i = actualYear; i <= actualYear + 8; i++){
 	options.innerText = i;
 	selectYear.appendChild(options);
 }
-
-
 // el mes se refleje en la imagen de tarjeta
 const expirationMonth = document.querySelector(".cardImage #cardExpirationId .monthExpiration");
 selectMonth.addEventListener("change", (e) =>{
   expirationMonth.textContent = e.target.value;
 })
-
 // el año se refleje en la imagen de tarjeta
 const expirationYear = document.querySelector(".cardImage #cardExpirationId .yearExpiration");
 selectYear.addEventListener("change", (e) =>{
   expirationYear.textContent = e.target.value.slice(2); // corta de 2 en adelante y crea un string
 })
-
-
-
 // condiciones al ingresar el número de la tarjeta
 const cardNumberFixed = document.getElementById("inputCardNumber");
 cardNumberFixed.addEventListener('keyup', (e) => {
@@ -142,14 +109,10 @@ cardNumberFixed.addEventListener('keyup', (e) => {
 	.replace(/\s/g, '')
   // Eliminar las letras
 	.replace(/\D/g, '')
-
-
-  
   // el número se refleje en la imagen de tarjeta
   let cardImageNumber = document.querySelector(".cardImage .cardImageNumber"); //class
   //accedemos al contenido dentro de la tarj igualando al valor
   cardImageNumber.textContent = inputValue;
-
   //para que ## aparezcan por default
   if(inputValue == ''){
 		cardImageNumber.textContent = '#### #### #### ####';
@@ -167,15 +130,11 @@ cardNameFixed.addEventListener('keyup', (e) => {
   cardImageName.textContent = inputValue;
 });
 
-
-
-
-
 let message = document.getElementById("message");
 let maskNumber = document.querySelector(".maskNumber");
 let validationMessage = document.getElementById("validationMessage");
-let button1 = document.getElementById("buttonValidation");
-button1.addEventListener("click", playButton); 
+let buttonValidation = document.getElementById("buttonValidation");
+buttonValidation.addEventListener("click", playButton); 
 
 function playButton(){
   //capturar el input y almacenarlo
@@ -187,26 +146,20 @@ function playButton(){
     message.innerHTML=`<span style="color:black;">Número completo`;
     let cardNumberValidation = validator.isValid(cardNumber);
     let cardNumberMask= document.getElementById("inputCardNumber").value;
+    maskNumber = validator.maskify(cardNumberMask);
     
-    let cardInformationScreen= document.getElementById("cardInformationScreen")
     if(cardNumberValidation == true){
       cardInformationScreen.style.display = 'none';
       cardValidationScreen.style.display ='block';
-      validationMessage.innerHTML=`Tarjeta válida ${validator.maskify(cardNumberMask)}`
 
-      /*maskNumber.innerHTML=`hols${ validator.maskify(cardNumberMask)}`;
-      validationMessage.innerHTML=`Tarjeta válida`;*/
-
-
+      validationMessage.innerHTML=`Tarjeta válida <br>`+  maskNumber;
     } else{
       cardInformationScreen.style.display = 'none';
       cardValidationScreen.style.display ='block';
-      validationMessage.innerHTML=`Tarjeta inválida ${validator.maskify(cardNumberMask)}`
-      
+      /*validationMessage.innerHTML=`Tarjeta inválida ${validator.maskify(cardNumberMask)}`*/
+      validationMessage.innerHTML=`Tarjeta inválida <br>`+  maskNumber;
     }
   }
-  
-
 }
 
 
