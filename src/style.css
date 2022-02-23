@@ -176,7 +176,7 @@ nav ul li a{
 #userForm h1 {
     font-size: 34px;
     color: black;
-    margin-left: -26px;
+    margin-left: 70px;
     margin-bottom: 90px;
     margin-top: -15px;
     width: 350px;
@@ -191,8 +191,8 @@ nav ul li a{
     padding: 40px 40px;
     box-sizing: border-box; /* border-box encaja de acuerdo al ancho y alto */
     
-    margin-left: -70px;
-    margin-top: -80px;
+    margin-left: 30px;
+    margin-top: -60px;
     width: 450px;
     height: 330px;
 }
@@ -224,6 +224,9 @@ nav ul li a{
     font-size: 12px;
     cursor: pointer;
     margin-left: 230px;
+}
+.form-buttons {
+    margin-left: 100px;
 }
 .form-buttons button{
     margin-top: 10px;
