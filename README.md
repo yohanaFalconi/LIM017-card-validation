@@ -27,9 +27,29 @@ par se les debe multiplicar por dos, si este número es mayor o igual a 10,
 debemos sumar los dígitos del resultado; el número a verificar será válido si
 la suma de sus dígitos finales es un múltiplo de 10.
 
-![gráfica de algoritmo de Luhn](https://www.101computing.net/wp/wp-content/uploads/Luhn-Algorithm.png)
+## 2. Resumen
 
-## 2. Resumen del proyecto
+### Nombre del proyecto
+Validación de tarjeta utilizando el algoritmo de Luhn para abonar dinero en un carnet universitario.
+
+### Descripción
+Billetera Universitaria es una plataforma que permite facilitar al usuario universitario validar el número de una tarjeta para recargar en su ID, permitiéndole así comprar y realizar diversas actividades dentro del campus. 
+
+### Imagen del proyecto final
+#### PANTALLA 1: 
+![Pantalla1](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla1.0.PNG)
+![Pantalla1.1](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla1.1.PNG)
+
+#### PANTALLA 1: 
+
+![Pantalla2](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla2.PNG)
+
+![Pantalla3](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla3.PNG)
+
+![Pantalla4](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla4.PNG)
+
+![Pantalla5](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla5.PNG)
+
 
 En este proyecto tendrás que construir una aplicación web que le permita a un
 usuario validar el número de una tarjeta de crédito. Además, tendrás que
