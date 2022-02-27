@@ -33,37 +33,23 @@ la suma de sus dígitos finales es un múltiplo de 10.
 Validación de tarjeta utilizando el algoritmo de Luhn para abonar dinero en un carnet universitario.
 
 ### Descripción
-Billetera Universitaria es una plataforma que permite facilitar al usuario universitario validar el número de una tarjeta para recargar en su ID, permitiéndole así comprar y realizar diversas actividades dentro del campus. 
+Billetera Universitaria es una plataforma que permite validar el número de una tarjeta a los estudiantes universitarios para recargar en su ID, permitiéndole así comprar y realizar diversas actividades dentro del campus. 
+
+### Investigación UX
+Los principales usuarios son estudiantes universitarios dado que esta aplicación busca resolverla necesidad de pagar de una manera fácil, rápida y segura por medio de su ID.
 
 ### Imagen del proyecto final
 #### PANTALLA 1: 
 ![Pantalla1](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla1.0.PNG)
 ![Pantalla1.1](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla1.1.PNG)
-
-#### PANTALLA 1: 
-
+#### PANTALLA 2: 
 ![Pantalla2](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla2.PNG)
-
+#### PANTALLA 3: 
 ![Pantalla3](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla3.PNG)
-
+#### PANTALLA 4: 
 ![Pantalla4](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla4.PNG)
-
+#### PANTALLA 5: 
 ![Pantalla5](https://github.com/yohanaFalconi/LIM017-card-validation/blob/main/src/images/Pantalla5.PNG)
-
-
-En este proyecto tendrás que construir una aplicación web que le permita a un
-usuario validar el número de una tarjeta de crédito. Además, tendrás que
-implementar funcionalidad para ocultar todos los dígitos de una tarjeta menos
-los últimos cuatro.
-
-La temática es libre. Tú debes pensar en qué situaciones de la vida real se
-necesitaría validar una tarjeta de crédito y pensar en cómo debe ser esa
-experiencia de uso (qué pantallas, explicaciones, mensajes, colores, ¿marca?)
-etc.
-
-Trabajando en parejas aprenderán a construir una aplicación web que interactuará
-con lx usuarix final a través del navegador, utilizando HTML, CSS y JavaScript
-como tecnologías.
 
 ## 3. Objetivos de aprendizaje
 
